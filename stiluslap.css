@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    margin: auto;
+    width: 80%;
+}
+/*article {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+nav {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+nav ul {
+    list-style-type: none;
+}
+nav a {
+    text-decoration: none;
+    font-size: 15x;
+}
+#keresesek {
+    display: flex;
+    justify-content: flex-start;
+}*/
