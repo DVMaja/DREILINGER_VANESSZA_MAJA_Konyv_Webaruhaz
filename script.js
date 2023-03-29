@@ -1,24 +1,42 @@
-import { OBJEKTUMLISTA } from "./adatok.js";
+import { OBJEKTUMLISTA, kulcsLista} from "./adatok.js";
+import { rendezesSzam, rendezesSzoveg } from "./rendezes.js";
 
 $(function () {
-    //const articleTablazat = $('.tablazat');
+  //const articleTablazat = $('.tablazat');
+  $(".tablazat").html(tablazatLetrehozas(OBJEKTUMLISTA));
+});
 
-    tablazatLetrehozas();
-})
+function tablazatLetrehozas(lista) {
+  let tablazat = "<div class='table-responsive'>";
+  tablazat += '<table class="table table-striped">';
+  tablazat += "<thead class='table-dark'> <tr>";
 
-function tablazatLetrehozas() {
-    let tablazat = "<table class=\"table table-striped\">";
+  for (const key in kulcsLista) {
+    tablazat += `<th id="${key}"> ${kulcsLista[key]} </th>`;
+  }
+  tablazat += "<th></th></tr></thead>";
 
-    tablazat += "<tr class=\"table-dark\"> <th> Név </th> <th> Kor </th> <th> fajta </th><th></th></tr>";
-    for (let index = 0; index < OBJEKTUMLISTA.length; index++) {
-        tablazat += "<tr>";
-        tablazat += "<td>" + OBJEKTUMLISTA[index].név + "</td>" +
-            "<td>" + OBJEKTUMLISTA[index].kor + "</td>" +
-            "<td>" + OBJEKTUMLISTA[index].fajta + "</td>" +
-            "<td> Törlés </td>";
-        tablazat += "</tr>";
+  for (let index = 0; index < lista.length; index++) {
+    tablazat += `<tr id="tr${index}">`;
+    const object = lista[index];
+
+    for (const key in object) {
+      const element = object[key];
+      tablazat += `<td ><span id="S${key}"> ${element} </span></td>`;
     }
-    tablazat += "</table>";
-    $('.tablazat').prepend(tablazat);
+    tablazat += "<td></td></tr>"
+  }
+  tablazat += "</table> </div>";
 
+  return tablazat;
+}
+/**Kattintásra rendez*/
+/**
+ * 0. létrejött a kód minden fejlécnek van egy id je
+ *1. megfogjuk a th elemeket
+ * 2. Ráteszünk egy esménykezelőt.
+ * 3. Eseménykezelőben lekérjük a kezelő elem id-ját 
+ */
+function KattintasraRendez(lista, kulcs) {
+    
 }

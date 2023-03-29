@@ -11,5 +11,5 @@ main {
 
 table, tr, td, th {
   border-collapse: collapse;
-  border: 1px double black;
+  /*border: 1px double black;*/
 }
