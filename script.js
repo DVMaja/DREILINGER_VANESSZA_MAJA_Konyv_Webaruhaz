@@ -3,10 +3,15 @@ import { rendezesObjektum } from "./rendezes.js";
 
 $(function () {
   //const articleTablazat = $('.tablazat');
-  $(".tablazat").html(tablazatLetrehozas(OBJEKTUMLISTA));
-  let kulcs = $(event.target).attr("id");
-  let thElem = $("");
-   thElem.on("click", rendezesObjektum(lista, kulcs));
+  $(".tablazat").html(tablazatLetrehozas(OBJEKTUMLISTA));  
+  let thElem = $("th");
+
+  thElem.on("click", function () {
+    let kulcs = $(event.target).attr("id");
+    console.log(kulcs);
+    rendezesObjektum(OBJEKTUMLISTA, kulcs);
+    console.log(OBJEKTUMLISTA);
+  });
 });
 
 function tablazatLetrehozas(lista) {

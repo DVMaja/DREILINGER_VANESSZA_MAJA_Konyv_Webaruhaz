@@ -7,9 +7,9 @@ export function rendezesObjektum(lista, kulcs) {
 }
 
 function rendezesSzovegSzerint(lista, kulcs) {
-  lista.sort(function (a, b) {
-    //onsole.log(a, b);
-    if (a[kulcs] - b[kulcs]) {
+  console.log(lista);
+  lista.sort(function (a, b) {    
+    if (a[kulcs] > b[kulcs]) {/**<> kell ide  szám nál kell kivonni */
       return 1;
     } else {
       return -1;
@@ -18,8 +18,7 @@ function rendezesSzovegSzerint(lista, kulcs) {
 }
 
 function rendezesSzamSzerint(lista, kulcs) {
-  lista.sort(function (a, b) {
-    //console.log(a, b);
+  lista.sort(function (a, b) {    
     return a[kulcs] - b[kulcs];
   });
 }
