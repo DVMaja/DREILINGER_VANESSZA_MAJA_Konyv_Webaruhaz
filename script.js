@@ -1,9 +1,12 @@
-import { OBJEKTUMLISTA, kulcsLista} from "./adatok.js";
-import { rendezesSzam, rendezesSzoveg } from "./rendezes.js";
+import { OBJEKTUMLISTA, kulcsLista } from "./adatok.js";
+import { rendezesObjektum } from "./rendezes.js";
 
 $(function () {
   //const articleTablazat = $('.tablazat');
   $(".tablazat").html(tablazatLetrehozas(OBJEKTUMLISTA));
+  let kulcs = $(event.target).attr("id");
+  let thElem = $("");
+   thElem.on("click", rendezesObjektum(lista, kulcs));
 });
 
 function tablazatLetrehozas(lista) {
@@ -12,6 +15,7 @@ function tablazatLetrehozas(lista) {
   tablazat += "<thead class='table-dark'> <tr>";
 
   for (const key in kulcsLista) {
+    /**Alt Gr + 7 = ` */
     tablazat += `<th id="${key}"> ${kulcsLista[key]} </th>`;
   }
   tablazat += "<th></th></tr></thead>";
@@ -24,10 +28,9 @@ function tablazatLetrehozas(lista) {
       const element = object[key];
       tablazat += `<td ><span id="S${key}"> ${element} </span></td>`;
     }
-    tablazat += "<td></td></tr>"
+    tablazat += "<td></td></tr>";
   }
   tablazat += "</table> </div>";
-
   return tablazat;
 }
 /**Kattintásra rendez*/
@@ -35,8 +38,5 @@ function tablazatLetrehozas(lista) {
  * 0. létrejött a kód minden fejlécnek van egy id je
  *1. megfogjuk a th elemeket
  * 2. Ráteszünk egy esménykezelőt.
- * 3. Eseménykezelőben lekérjük a kezelő elem id-ját 
+ * 3. Eseménykezelőben lekérjük a kezelő elem id-ját
  */
-function KattintasraRendez(lista, kulcs) {
-    
-}
