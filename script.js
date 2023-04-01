@@ -7,10 +7,11 @@ $(function () {
   let thElem = $("th");
 
   thElem.on("click", function () {
-    let kulcs = $(event.target).attr("id");
-    console.log(kulcs);
+    let kulcs = $(event.target).attr("id");    
     rendezesObjektum(OBJEKTUMLISTA, kulcs);
     console.log(OBJEKTUMLISTA);
+    rendezettKiiras(OBJEKTUMLISTA);
+    
   });
 });
 
@@ -45,3 +46,21 @@ function tablazatLetrehozas(lista) {
  * 2. Ráteszünk egy esménykezelőt.
  * 3. Eseménykezelőben lekérjük a kezelő elem id-ját
  */
+function rendezettKiiras(lista) {
+  const tbodyElem = $(".tablazat tbody");
+  tbodyElem.empty();
+  /**^ Ezzel kiürítjük a táblázatot */
+
+  for (let index = 0; index < lista.length; index++) {
+    const object = lista[index];
+    let trElem = $("<tr>").attr("id", `tr${index}`);
+
+    for (const key in object) {
+      const element = object[key];
+      let tdElem = $("<td>").html(`<span id="S${key}">${element}</span>`);
+      trElem.append(tdElem);
+    }
+
+    tbodyElem.append(trElem);
+  }
+}

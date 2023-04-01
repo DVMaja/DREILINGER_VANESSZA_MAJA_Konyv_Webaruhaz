@@ -6,8 +6,7 @@ export function rendezesObjektum(lista, kulcs) {
   }
 }
 
-function rendezesSzovegSzerint(lista, kulcs) {
-  console.log(lista);
+function rendezesSzovegSzerint(lista, kulcs) {  
   lista.sort(function (a, b) {    
     if (a[kulcs] > b[kulcs]) {/**<> kell ide  szám nál kell kivonni */
       return 1;
