@@ -5,6 +5,10 @@ let kattSzamlalo = 1;
 //itt tartjuk számon ogy milyen irányba rendezzük
 
 $(function () {
+  kezdoFuggveny();
+
+});
+function kezdoFuggveny() {
   //const articleTablazat = $('.tablazat');
   $(".tablazat").html(tablazatLetrehozas(OBJEKTUMLISTA));  
   let thElem = $("th");
@@ -14,17 +18,21 @@ $(function () {
     rendezesObjektum(OBJEKTUMLISTA, kulcs, kattSzamlalo); 
     kattSzamlalo *= -1;
     console.log(OBJEKTUMLISTA);
-    $("tbody").html(rendezettKiiras(OBJEKTUMLISTA));  
-    
+    $("tbody").html(rendezettKiiras(OBJEKTUMLISTA));         
   });
+  console.log(OBJEKTUMLISTA[0]);
 
   let torlesElem = $(".torles");
-  //console.log(torlesElem);
-  torlesElem.on("click", function () {
-    //törlés itt törénik     
-  })
-;
-});
+  
+  torlesElem.on("click", function () {    
+    let torlendo = event.target.id;
+    OBJEKTUMLISTA.splice(torlendo, 1);
+    //splice() fog kelleni
+    console.log(OBJEKTUMLISTA);  
+    kezdoFuggveny();
+
+  });
+}
 
 function tablazatLetrehozas(lista) {
   let tablazat = "<div class='table-responsive'>";
@@ -45,7 +53,7 @@ function tablazatLetrehozas(lista) {
       const element = object[key];
       tablazat += `<td ><span id="S${key}"> ${element} </span></td>`;
     }
-    tablazat += "<td><button class=\"torles btn btn-danger\" type=\"button\">Törlés</button></td></tr>";
+    tablazat += `<td><button id="${index}" class="torles btn btn-danger" type="butto\">Törlés</button></td></tr>`;
   }
   tablazat += "</table> </div>";
   return tablazat;
@@ -72,7 +80,7 @@ function rendezettKiiras(lista) {
       tdElem = $("<td>").html(`<span id="S${key}">${element}</span>`);
       trElem.append(tdElem);
     }    
-    tdElem += "<td><button class=\"torles btn btn-danger\" type=\"button\">Törlés</button></td></tr>";
+    tdElem += `<td><button id=\"${index}\" class=\"torles btn btn-danger\" type=\"button\">Törlés</button></td></tr>`;
     trElem.append(tdElem);
 
     tbodyElem.append(trElem);
