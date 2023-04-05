@@ -1,21 +1,21 @@
-export function rendezesObjektum(lista, kulcs) {
-  if (typeof kulcs == "number") {
-    rendezesSzamSzerint(lista, kulcs);
-  } else {
-    rendezesSzovegSzerint(lista, kulcs);
-  }
+export function rendezesObjektum(lista, kulcs, irany) {  
+    rendezesSzovegSzerint(lista, kulcs, irany);
+  
 }
 
-function rendezesSzovegSzerint(lista, kulcs) {  
+function rendezesSzovegSzerint(lista, kulcs, irany) {  
+  let eredmeny;
   lista.sort(function (a, b) {    
     if (a[kulcs] > b[kulcs]) {/**<> kell ide  szám nál kell kivonni */
-      return 1;
+      eredmeny =  1;
     } else {
-      return -1;
+      eredmeny = -1;
     }
+    eredmeny *= irany;    
+    return eredmeny;
   });
 }
-
+// nincs erre szükség itt.
 function rendezesSzamSzerint(lista, kulcs) {
   lista.sort(function (a, b) {    
     return a[kulcs] - b[kulcs];
