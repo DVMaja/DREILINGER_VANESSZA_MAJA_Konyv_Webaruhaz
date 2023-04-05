@@ -1,18 +1,29 @@
 import { OBJEKTUMLISTA, kulcsLista } from "./adatok.js";
 import { rendezesObjektum } from "./rendezes.js";
 
+let kattSzamlalo = 1;
+//itt tartjuk számon ogy milyen irányba rendezzük
+
 $(function () {
   //const articleTablazat = $('.tablazat');
   $(".tablazat").html(tablazatLetrehozas(OBJEKTUMLISTA));  
   let thElem = $("th");
-
+  
   thElem.on("click", function () {
     let kulcs = $(event.target).attr("id");    
-    rendezesObjektum(OBJEKTUMLISTA, kulcs);
+    rendezesObjektum(OBJEKTUMLISTA, kulcs, kattSzamlalo); 
+    kattSzamlalo *= -1;
     console.log(OBJEKTUMLISTA);
-    rendezettKiiras(OBJEKTUMLISTA);
+    $("tbody").html(rendezettKiiras(OBJEKTUMLISTA));  
     
   });
+
+  let torlesElem = $(".torles");
+  //console.log(torlesElem);
+  torlesElem.on("click", function () {
+    //törlés itt törénik     
+  })
+;
 });
 
 function tablazatLetrehozas(lista) {
