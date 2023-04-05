@@ -45,7 +45,7 @@ function tablazatLetrehozas(lista) {
       const element = object[key];
       tablazat += `<td ><span id="S${key}"> ${element} </span></td>`;
     }
-    tablazat += "<td></td></tr>";
+    tablazat += "<td><button class=\"torles btn btn-danger\" type=\"button\">Törlés</button></td></tr>";
   }
   tablazat += "</table> </div>";
   return tablazat;
@@ -61,16 +61,19 @@ function rendezettKiiras(lista) {
   const tbodyElem = $(".tablazat tbody");
   tbodyElem.empty();
   /**^ Ezzel kiürítjük a táblázatot */
-
+  let tdElem;
+  
   for (let index = 0; index < lista.length; index++) {
     const object = lista[index];
     let trElem = $("<tr>").attr("id", `tr${index}`);
 
     for (const key in object) {
       const element = object[key];
-      let tdElem = $("<td>").html(`<span id="S${key}">${element}</span>`);
+      tdElem = $("<td>").html(`<span id="S${key}">${element}</span>`);
       trElem.append(tdElem);
-    }
+    }    
+    tdElem += "<td><button class=\"torles btn btn-danger\" type=\"button\">Törlés</button></td></tr>";
+    trElem.append(tdElem);
 
     tbodyElem.append(trElem);
   }
