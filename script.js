@@ -29,7 +29,14 @@ function kezdoFuggveny() {
     OBJEKTUMLISTA.splice(torlendo, 1);
     //splice() fog kelleni
     console.log(OBJEKTUMLISTA);
-    kezdoFuggveny();
+    
+    let szerkElem = $(".szerkeszt");
+
+    szerkElem.on("")
+
+    kezdoFuggveny("click", function () {
+      //szerkeszhetőnek kell lennie
+    });
 
   });
 }
