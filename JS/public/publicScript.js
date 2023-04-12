@@ -5,24 +5,25 @@ $(function () {
 });
 
 function kezdoFuggveny(OBJEKTUMLISTA) {
-  $(".tarolo").html(divekOsszerak(OBJEKTUMLISTA));
+  const taroloElem = $("article");
+  $("article").html(divekOsszerak(OBJEKTUMLISTA));
 
 }
-function divekOsszerak(OBJEKTUMLISTA) {
-  const taroloElem = $("article");
+
+function divekOsszerak(OBJEKTUMLISTA) {  
   let text = `<div class="tarolo row">`;
 
   for (let index = 0; index < OBJEKTUMLISTA.length; index++) {
     text += `<div class="part">
     <ul class="list-group">`;
 
-    text += `<li class="list-group-item"><h2>Neve</h2><</li>`;
-    text += `<li class="list-group-item"><p>Fajta, kora</p></li>`;
-    text += `<li class="list-group-item"><p><button>Gomb</button></p></li>`;
+    text += `<li class="list-group-item"><h2>Neve</h2></li>
+    <li class="list-group-item"><p>Fajta, kora</p></li>
+    <li class="list-group-item"><button>Gomb</button></li>`;
 
     text += "</ul><div>";
   }
   text += "</div>";
-  //console.log(text);
+  console.log(text);
   return text;
 }
