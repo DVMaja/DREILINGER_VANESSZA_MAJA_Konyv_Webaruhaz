@@ -1,5 +1,5 @@
 export const OBJEKTUMLISTA = [
-  { nev: "Dézi", fajta: "keverék", kor: 2 },
+  { nev: "Dézi", fajta: "keverék", kor: 2, },
   { nev: "Bodri", fajta: "mudi", kor: 12 },
   { nev: "Loki", fajta: "tacskó", kor: 5 },
   { nev: "Zuri", fajta: "foxterrier", kor: 4 },
@@ -9,3 +9,4 @@ export const OBJEKTUMLISTA = [
 ];
 
 export let kulcsLista = { nev: "Név", fajta: "Fajtája", kor: "Kora" };
+const SARKANYLISTA = []

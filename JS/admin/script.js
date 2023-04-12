@@ -1,12 +1,12 @@
-import { OBJEKTUMLISTA, kulcsLista } from "./adatok.js";
-import { rendezesObjektum } from "./rendezes.js";
+import { OBJEKTUMLISTA, kulcsLista } from "../adatok.js";
+
+import { rendezesObjektum } from "../rendezes.js";
 
 let kattSzamlalo = 1;
 //itt tartjuk számon ogy milyen irányba rendezzük
 
 $(function () {
-  kezdoFuggveny();
-
+  kezdoFuggveny();  
 });
 function kezdoFuggveny() {
   //const articleTablazat = $('.tablazat');
@@ -30,17 +30,16 @@ function kezdoFuggveny() {
     //splice() fog kelleni
     console.log(OBJEKTUMLISTA);
     kezdoFuggveny();
-  
-
   });
-  /*   let szerkElem = $(".szerkeszt");
-
-    szerkElem.on("") */
-
-   /*  kezdoFuggveny("click", function () {
-      //szerkeszhetőnek kell lennie
-    }); */
+  
+  /*let szerkElem = $(".szerkeszt");
+  szerkElem.on("");
+  kezdoFuggveny("click", function () {
+    //szerkeszhetőnek kell lennie
+  });*/
 }
+
+
 
 function tablazatLetrehozas(lista) {
   let tablazat = "<div class='table-responsive'>";
@@ -51,7 +50,7 @@ function tablazatLetrehozas(lista) {
     /**Alt Gr + 7 = ` */
     tablazat += `<th id="${key}"> ${kulcsLista[key]} </th>`;
   }
-  tablazat += "<th></th> <th></th></tr></thead>";
+  tablazat += "<th></th> <th></th> </tr></thead>";
 
   for (let index = 0; index < lista.length; index++) {
     tablazat += `<tr id="tr${index}">`;
@@ -89,7 +88,7 @@ function rendezettKiiras(lista) {
       tdElem = $("<td>").html(`<span id="S${key}">${element}</span>`);
       trElem.append(tdElem);
     }
-    tdElem += `<td><button id=\"${index}\" class=\"torles btn btn-danger\" type=\"button\">Törlés</button></td></tr>`;    
+    tdElem += `<td><button id=\"${index}\" class=\"torles btn btn-danger\" type=\"button\">Törlés</button></td></tr>`;
     trElem.append(tdElem);
     tdElem += `<td><button id="${index}" class="szerkeszt btn btn-success" type="button">Szerkesztés</button></td></tr>`;
     trElem.append(tdElem);
