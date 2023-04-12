@@ -1,4 +1,4 @@
-import { OBJEKTUMLISTA, kulcsLista } from "../adatok.js";
+import { OBJEKTUMLISTA} from "../adatok.js";
 
 $(function () {
   kezdoFuggveny(OBJEKTUMLISTA);
@@ -13,15 +13,16 @@ function divekOsszerak(OBJEKTUMLISTA) {
   let text = `<div class="tarolo row">`;
 
   for (let index = 0; index < OBJEKTUMLISTA.length; index++) {
-    text += `<div class="part"><ul class="list-group">`;
+    text += `<div class="part">
+    <ul class="list-group">`;
 
-    text += `<li class="list-group-item"><h2>Neve</h2></li>`;
+    text += `<li class="list-group-item"><h2>Neve</h2><</li>`;
     text += `<li class="list-group-item"><p>Fajta, kora</p></li>`;
     text += `<li class="list-group-item"><p><button>Gomb</button></p></li>`;
 
     text += "</ul><div>";
   }
   text += "</div>";
-  console.log(text);
+  //console.log(text);
   return text;
 }
