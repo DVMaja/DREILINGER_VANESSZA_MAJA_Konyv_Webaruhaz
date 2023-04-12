@@ -18,7 +18,7 @@ function kezdoFuggveny() {
     rendezesObjektum(OBJEKTUMLISTA, kulcs, kattSzamlalo);
     kattSzamlalo *= -1;
     console.log(OBJEKTUMLISTA);
-    $("tbody").html(rendezettKiiras(OBJEKTUMLISTA));
+    kezdoFuggveny();
   });
   console.log(OBJEKTUMLISTA[0]);
 
@@ -29,16 +29,17 @@ function kezdoFuggveny() {
     OBJEKTUMLISTA.splice(torlendo, 1);
     //splice() fog kelleni
     console.log(OBJEKTUMLISTA);
-    
-    let szerkElem = $(".szerkeszt");
-
-    szerkElem.on("")
-
-    kezdoFuggveny("click", function () {
-      //szerkeszhetőnek kell lennie
-    });
+    kezdoFuggveny();
+  
 
   });
+  /*   let szerkElem = $(".szerkeszt");
+
+    szerkElem.on("") */
+
+   /*  kezdoFuggveny("click", function () {
+      //szerkeszhetőnek kell lennie
+    }); */
 }
 
 function tablazatLetrehozas(lista) {
