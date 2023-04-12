@@ -6,7 +6,7 @@ let kattSzamlalo = 1;
 //itt tartjuk számon ogy milyen irányba rendezzük
 
 $(function () {
-  kezdoFuggveny();  
+  kezdoFuggveny();
 });
 function kezdoFuggveny() {
   //const articleTablazat = $('.tablazat');
@@ -31,15 +31,18 @@ function kezdoFuggveny() {
     console.log(OBJEKTUMLISTA);
     kezdoFuggveny();
   });
-  
+
   /*let szerkElem = $(".szerkeszt");
-  szerkElem.on("");
-  kezdoFuggveny("click", function () {
-    //szerkeszhetőnek kell lennie
+  szerkElem.on("click", function () {
+    console.log(szerkElem);
+    //findIndex
+    // meg kell hívnia a modosítós mezőt a táblázat fölé, és ott lehessen modosítani.
+    modositoMezo(OBJEKTUMLISTA);
+    let modositoElem = $(".modositas");
+    $(".modositas").html(modositoMezo(OBJEKTUMLISTA));   
+    
   });*/
 }
-
-
 
 function tablazatLetrehozas(lista) {
   let tablazat = "<div class='table-responsive'>";
@@ -66,13 +69,7 @@ function tablazatLetrehozas(lista) {
   tablazat += "</table> </div>";
   return tablazat;
 }
-/**Kattintásra rendez*/
-/**
- * 0. létrejött a kód minden fejlécnek van egy id je
- *1. megfogjuk a th elemeket
- * 2. Ráteszünk egy esménykezelőt.
- * 3. Eseménykezelőben lekérjük a kezelő elem id-ját
- */
+
 function rendezettKiiras(lista) {
   const tbodyElem = $(".tablazat tbody");
   tbodyElem.empty();
@@ -95,4 +92,17 @@ function rendezettKiiras(lista) {
 
     tbodyElem.append(trElem);
   }
+}
+
+function modositoMezo(OBJEKTUMLISTA) {
+  let szoveg;
+  szoveg += "<form action=\"#\">";
+  for (const key in object) {
+      const element = object[key];
+      tablazat += `<td ><span id="S${key}"> ${element} </span></td>`;
+    }
+
+  szoveg += "</form>";
+
+  return szoveg;
 }
