@@ -29,8 +29,19 @@ function kezdoFuggveny() {
     OBJEKTUMLISTA.splice(torlendo, 1);
     //splice() fog kelleni
     console.log(OBJEKTUMLISTA);
-    kezdoFuggveny();
+    kezdoFuggveny();    
   });
+
+  let ujElem = $(".ujElemHoz");
+
+  ujElem.on("click", function(){
+    console.log(ujElem);
+    let ujElemEloH = $(".ujElemLetrehoz");
+    ujElemEloH.toggleClass("elrejt");
+    //submitra add event listener event.preventDefault()
+
+    
+  })
 
   /*let szerkElem = $(".szerkeszt");
   szerkElem.on("click", function () {

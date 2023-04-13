@@ -40,29 +40,45 @@
                 <div class="container row ">
                     <div class="col-lg-3">
                         <label for="inev"></label>
-                        <input type="text" id="inev" name="nev" placeholder="Név">
+                        <input type="text" id="inev" name="nev" placeholder="Név" class="form-control">
                     </div>
                     <div class="col-lg-3">
                         <label for="ikor"></label>
-                        <input type="text" id="ikor" name="kor" placeholder="pl: >12, =12, <12">
+                        <input type="text" id="ikor" name="kor" placeholder="pl: >12, =12, <12" class="form-control">
                     </div>
                     <div class="col-lg-3">
                         <label for="ifajta"></label>
-                        <input type="text" id="ifajta" name="fajta" placeholder="fajta">
+                        <input type="text" id="ifajta" name="fajta" placeholder="fajta" class="form-control">
                     </div>
                     <div class="col-lg-3">
-                        <input type="submit" class="btn btn-primary" value="Új elem">
+                        <label for="gomb"></label>
+                        <input type="submit" id="gomb" class="form-control btn btn-primary ujElemHoz" value="Új elem">
                     </div>
                 </div>
             </form>
 
-            <section class="modositas">
-                <form action="#">
-                    <div class="col-lg-3">
 
-                    </div>
-                </form>
-            </section>
+            
+            <div class="ujElemLetrehoz container mt-3 elrejt">                
+                    <form action="#" class="">
+                      <div class="mb-3 mt-3">
+                        <label for="nev">nev:</label>
+                        <input type="nev" class="form-control" id="nev" placeholder="nev" name="nev">
+                      </div>
+
+                      <div class="mb-3 mt-3">
+                        <label for="kor">kor:</label>
+                        <input type="text" class="form-control" id="kor" placeholder="kor" name="kor">
+                      </div>
+
+                      <div class="mb-3 mt-3">
+                        <label for="fajta">fajta:</label>
+                        <input type="text" class="form-control" id="fajta" placeholder="fajta" name="fajta">
+                      </div>
+                      
+                      <button type="submit" class="btn btn-primary">Beküldt</button>
+                    </form>
+                  </div>
 
             <section class="tablazat"></section>
             
