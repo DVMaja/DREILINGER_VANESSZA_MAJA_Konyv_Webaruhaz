@@ -39,8 +39,10 @@ function kezdoFuggveny() {
     let ujElemEloH = $(".ujElemLetrehoz");
     ujElemEloH.toggleClass("elrejt");
     //submitra add event listener event.preventDefault()
+    let submitGomb = $(".submit");
+    event.preventDefault(submitGomb);
+    elemHozzaad(OBJEKTUMLISTA);  
 
-    
   })
 
   /*let szerkElem = $(".szerkeszt");
@@ -116,4 +118,12 @@ function modositoMezo(OBJEKTUMLISTA) {
   szoveg += "</form>";
 
   return szoveg;
+}
+function eElemHozzaad(lista) {
+  let hozzad = $(".submit");
+  hozzad.on("click", function() {
+    lista.push()
+  })
+  
+  
 }
