@@ -16,34 +16,52 @@ function kezdoFuggveny() {
   thElem.on("click", function () {
     let kulcs = $(event.target).attr("id");
     rendezesObjektum(OBJEKTUMLISTA, kulcs, kattSzamlalo);
-    kattSzamlalo *= -1;
-    console.log(OBJEKTUMLISTA);
+    kattSzamlalo *= -1;    
     kezdoFuggveny();
   });
-  console.log(OBJEKTUMLISTA[0]);
+  //console.log(OBJEKTUMLISTA[0]);
 
   let torlesElem = $(".torles");
 
   torlesElem.on("click", function () {
     let torlendo = event.target.id;
-    OBJEKTUMLISTA.splice(torlendo, 1);
-    //splice() fog kelleni
-    console.log(OBJEKTUMLISTA);
-    kezdoFuggveny();    
+    OBJEKTUMLISTA.splice(torlendo, 1);    
+    //console.log(OBJEKTUMLISTA);
+    kezdoFuggveny();
   });
 
   let ujElem = $(".ujElemHoz");
 
-  ujElem.on("click", function(){
-    console.log(ujElem);
+  ujElem.on("click", function () {
+    //console.log(ujElem);
+
     let ujElemEloH = $(".ujElemLetrehoz");
     ujElemEloH.toggleClass("elrejt");
-    //submitra add event listener event.preventDefault()
+
     let submitGomb = $(".submit");
-    event.preventDefault(submitGomb);
-    elemHozzaad(OBJEKTUMLISTA);  
+    let aktForm = $(".ujArray");
+    
+    let urlap = $(".ujArray");
+    urlap.submit(function (event) {
+      event.preventDefault(submitGomb);
+  
+      let elsoAdat = $("#nev").val();
+      let masodikAdat = $("#fajta").val();
+      let harmadikAdat = $("#kor").val();
+  
+      let ujAdatsor = { nev: elsoAdat, fajta: masodikAdat, kor: harmadikAdat }
+  
+      OBJEKTUMLISTA.push(ujAdatsor);
+      console.log(OBJEKTUMLISTA);
+     
+      kezdoFuggveny();
+  
+    })
 
   })
+
+ 
+
 
   /*let szerkElem = $(".szerkeszt");
   szerkElem.on("click", function () {
@@ -107,23 +125,15 @@ function rendezettKiiras(lista) {
   }
 }
 
-function modositoMezo(OBJEKTUMLISTA) {
-  let szoveg;
-  szoveg += "<form action=\"#\">";
+/* function modositoMezo(OBJEKTUMLISTA) {
+  let szoveg= "<form action=\"#\">";
   for (const key in object) {
-      const element = object[key];
-      tablazat += `<td ><span id="S${key}"> ${element} </span></td>`;
-    }
+    const element = object[key];
+    tablazat += `<td ><span id="S${key}"> ${element} </span></td>`;
+  }
 
   szoveg += "</form>";
 
   return szoveg;
 }
-function eElemHozzaad(lista) {
-  let hozzad = $(".submit");
-  hozzad.on("click", function() {
-    lista.push()
-  })
-  
-  
-}
+ */
