@@ -16,22 +16,22 @@ function kezdoFuggveny() {
   thElem.on("click", function () {
     let kulcs = $(event.target).attr("id");
     rendezesObjektum(OBJEKTUMLISTA, kulcs, kattSzamlalo);
-    kattSzamlalo *= -1;    
+    kattSzamlalo *= -1;
     kezdoFuggveny();
   });
   //console.log(OBJEKTUMLISTA[0]);
 
-  let torlesElem = $(".torles");
 
+  let torlesElem = $(".torles");
   torlesElem.on("click", function () {
     let torlendo = event.target.id;
-    OBJEKTUMLISTA.splice(torlendo, 1);    
+    OBJEKTUMLISTA.splice(torlendo, 1);
     //console.log(OBJEKTUMLISTA);
     kezdoFuggveny();
   });
 
-  let ujElem = $(".ujElemHoz");
 
+  let ujElem = $(".ujElemHoz");
   ujElem.on("click", function () {
     //console.log(ujElem);
 
@@ -40,27 +40,24 @@ function kezdoFuggveny() {
 
     let submitGomb = $(".submit");
     let aktForm = $(".ujArray");
-    
+
     let urlap = $(".ujArray");
+
     urlap.submit(function (event) {
       event.preventDefault(submitGomb);
-  
+
       let elsoAdat = $("#nev").val();
       let masodikAdat = $("#fajta").val();
       let harmadikAdat = $("#kor").val();
-  
+
       let ujAdatsor = { nev: elsoAdat, fajta: masodikAdat, kor: harmadikAdat }
-  
+
       OBJEKTUMLISTA.push(ujAdatsor);
-      console.log(OBJEKTUMLISTA);
-     
+      //console.log(OBJEKTUMLISTA);     
       kezdoFuggveny();
-  
+
     })
-
   })
-
- 
 
 
   /*let szerkElem = $(".szerkeszt");
@@ -74,6 +71,7 @@ function kezdoFuggveny() {
     
   });*/
 }
+
 
 function tablazatLetrehozas(lista) {
   let tablazat = "<div class='table-responsive'>";
@@ -101,6 +99,7 @@ function tablazatLetrehozas(lista) {
   return tablazat;
 }
 
+
 function rendezettKiiras(lista) {
   const tbodyElem = $(".tablazat tbody");
   tbodyElem.empty();
@@ -125,15 +124,14 @@ function rendezettKiiras(lista) {
   }
 }
 
+
 /* function modositoMezo(OBJEKTUMLISTA) {
   let szoveg= "<form action=\"#\">";
   for (const key in object) {
     const element = object[key];
     tablazat += `<td ><span id="S${key}"> ${element} </span></td>`;
   }
-
   szoveg += "</form>";
-
   return szoveg;
 }
  */
