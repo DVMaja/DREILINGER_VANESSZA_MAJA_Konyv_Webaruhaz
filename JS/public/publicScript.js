@@ -13,7 +13,7 @@ function kezdoFuggveny(OBJEKTUMLISTA) {
   modalButton.on("click", function () {
     modalButton;
     let keresettElem = OBJEKTUMLISTA.indexOf(modalButton);
-    kartyakModalja(OBJEKTUMLISTA);
+    $("#myModal").html(kartyakModalja(OBJEKTUMLISTA));
   });
 }
 
@@ -33,7 +33,7 @@ function divekOsszerak(lista) {
       }
     }
     text += `<div class="card-footer">
-    <button type="button" class="btn btn-dark modalGomb" data-bs-toggle="modal" data-bs-target="#myModal">Gomb</button></div>`;
+    <button type="button" id="${index}" class="btn btn-dark modalGomb" data-bs-toggle="modal" data-bs-target="#myModal">Gomb</button></div>`;
 
     text += `</div>`;
   }
@@ -42,24 +42,41 @@ function divekOsszerak(lista) {
   return text;
 }
 
-function kartyakModalja(lista) {  
-  let index = 0;
-  let modal;
-  if (true) {
-    modal += `<div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
+function kartyakModalja(lista) { 
+  let megjelenitendo = event.target.id;
+  
+  console.log(megjelenitendo);
+  let modal = `<div class="modal-content">`;
+
+ /*  for (let index = 0; index < lista.length; index++) {
+    const object = lista[index]; */
+    //let kiirando = event.target.
+    let kulcs = $(event.target).attr("id");
+    console.log(kulcs);
+
+    if ((megjelenitendo = kulcs)) {
+      /* for (const key in object) {
+        const element = object[key];  */
+
+        modal += `<div class="modal-header">
+        <h4 class="modal-title">Kutya neve</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
      
       <div class="modal-body">
-        Modal body..
+        <ul><li>fajta: </li> <li>kor: </li></ul>
       </div>
 
       
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
       </div>`;
-  } 
+      //}
+    //}
+  }
+  modal += `</div>`;
+  //console.log(modal);
+
   return modal;
 }
