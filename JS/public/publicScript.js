@@ -11,8 +11,6 @@ function kezdoFuggveny(OBJEKTUMLISTA) {
   let modalButton = $(".modalGomb");
 
   modalButton.on("click", function () {
-    modalButton;
-    let keresettElem = OBJEKTUMLISTA.indexOf(modalButton);
     $("#myModal").html(kartyakModalja(OBJEKTUMLISTA));
   });
 }
@@ -39,42 +37,32 @@ function divekOsszerak(lista) {
   }
   text += "</div>";
   text += "</div>";
+
   return text;
 }
 
-function kartyakModalja(lista) { 
+function kartyakModalja(lista) {
   let megjelenitendo = event.target.id;
-  
+
   console.log(megjelenitendo);
   let modal = `<div class="modal-content">`;
 
- /*  for (let index = 0; index < lista.length; index++) {
-    const object = lista[index]; */
-    //let kiirando = event.target.
-    let kulcs = $(event.target).attr("id");
-    console.log(kulcs);
+  for (const key in lista[megjelenitendo]) {
+    const element = lista[megjelenitendo][key];
+    //console.log(element);
 
-    if ((megjelenitendo = kulcs)) {
-      /* for (const key in object) {
-        const element = object[key];  */
-
-        modal += `<div class="modal-header">
-        <h4 class="modal-title">Kutya neve</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-     
-      <div class="modal-body">
-        <ul><li>fajta: </li> <li>kor: </li></ul>
-      </div>
-
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div>`;
-      //}
-    //}
+    if (key == "nev") {
+      modal += `<div class="modal-header">
+          <h4 class="modal-title"><span id="S${key}">${element}</span></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>`;
+    } else {
+      modal += `<div class="modal-body">
+          <p><span id="S${key}">${element}</span></p></div>`;
+    }
   }
+  modal += `<div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> </div>`;
+
   modal += `</div>`;
   //console.log(modal);
 

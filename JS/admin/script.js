@@ -38,7 +38,7 @@ function kezdoFuggveny() {
     let ujElemEloH = $(".ujElemLetrehoz");
     ujElemEloH.toggleClass("elrejt");
 
-    let submitGomb = $(".submit");
+    let submitGomb = $(".button");
     let aktForm = $(".ujArray");
 
     let urlap = $(".ujArray");
