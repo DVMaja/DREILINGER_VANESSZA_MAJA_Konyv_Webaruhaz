@@ -51,14 +51,16 @@ function kezdoFuggveny() {
       let elsoAdat = $("#nev").val();
       let masodikAdat = $("#fajta").val();
       let harmadikAdat = $("#kor").val();
+      //validalas(); ->bef
 
       let ujAdatsor = { nev: elsoAdat, fajta: masodikAdat, kor: harmadikAdat }
 
       OBJEKTUMLISTA.push(ujAdatsor);
       //console.log(OBJEKTUMLISTA);     
       kezdoFuggveny();
-
     })
+
+
   })
 
 
