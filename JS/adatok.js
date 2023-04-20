@@ -9,4 +9,10 @@ export const OBJEKTUMLISTA = [
 ];
 
 export let kulcsLista = { nev: "Név", fajta: "Fajtája", kor: "Kora" };
-const SARKANYLISTA = []
+
+/**Késöbb befelyezni */
+const KONYVLISTA = [
+  { kep: "kepek/skulduggery_1.png", iro: "Derek Landy", mufaly: "dark fantasy", cim: "Skuldugery Pleasant 1", kiadasDatuma: 2007 },
+];
+
+let konyvKulcsok = { kep: "Borító", iro: "Író", mufaly: "Műfaly", cim: "Cím", kiadasDatuma: "Kiadás dátuma" };

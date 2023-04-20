@@ -1,8 +1,0 @@
-1. szűrések
-2. új elem felvétele
-3. Admin és kutyás felület.
-4. kosárba kutyák betétele.
-Mint egy webárúház
-Minden bootstrap legyen
-MÁR A HÉTVÉGÉN CSINÁLD!!
-Húsvét utáni héttre kész legyen, jegyre megy

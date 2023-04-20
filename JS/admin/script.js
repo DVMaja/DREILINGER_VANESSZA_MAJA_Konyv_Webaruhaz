@@ -2,6 +2,8 @@ import { OBJEKTUMLISTA, kulcsLista } from "../adatok.js";
 
 import { rendezesObjektum } from "../rendezes.js";
 
+import { validalas } from "../valid.js";
+
 let kattSzamlalo = 1;
 //itt tartjuk számon ogy milyen irányba rendezzük
 
