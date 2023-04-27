@@ -26,9 +26,12 @@ function divekOsszerak(lista) {
       const element = object[key];
       if (key == "cim") {
         text += `<div class="card-header text-bg-success"><h2><span id="S${key}"> ${element} </span></h2></div>`;
-      }
-       else {
-        text += `<div class="card-body"><p><span id="S${key}"> ${element} </span></p></div>`;
+      } else {
+        if (key == "kep") {
+          text += `<div class="card-body"><img src="${element}" alt="kép"></div>`;
+        } else {
+          text += `<div class="card-body"><p><span id="S${key}"> ${element} </span></p></div>`;
+        }
       }
     }
     text += `<div class="card-footer">
