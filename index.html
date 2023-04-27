@@ -40,40 +40,45 @@
         <div class="container row ">
           <div class="col-lg-3">
             <label for="inev"></label>
-            <input type="text" id="inev" name="nev" placeholder="Név" class="form-control">
+            <input type="text" id="inev" name="nev" placeholder="Név" class="form-control" pattern="[A-Z][a-z]{2,}">
           </div>
           <div class="col-lg-3">
             <label for="ikor"></label>
-            <input type="text" id="ikor" name="kor" placeholder="pl: >12, =12, <12" class="form-control">
+            <input type="text" id="ikor" name="kor" placeholder="pl: >12, =12, <12" class="form-control" pattern="[1-9][0-9]{2,}">
           </div>
           <div class="col-lg-3">
             <label for="ifajta"></label>
             <input type="text" id="ifajta" name="fajta" placeholder="fajta" class="form-control">
           </div>
           <div class="col-lg-3">
-            <label for="gomb"></label>
-            <input type="button" id="gomb" class="form-control btn btn-primary ujElemHoz" value="Új elem">
+            <label for="keresGomb"></label>
+            <input type="submit" id="keresGomb" class="form-control btn btn-primary" value="Kereses">
+          </div>
+
+          <div class="col-lg-3">
+            <label for="ujGomb"></label>
+            <input type="button" id="ujGomb" class="form-control btn btn-primary ujElemHoz" value="Új elem">
           </div>
         </div>
       </form>
 
 
-
+<!-- <img src="kepek/skulduggery_1.png" alt=""> -->
       <div class="ujElemLetrehoz container mt-3 elrejt">
         <form action="#" class="ujArray">
           <div class="mb-3 mt-3">
             <label for="nev">nev:</label>
-            <input type="nev" class="form-control" id="nev" placeholder="nev" name="nev">
+            <input type="nev" class="form-control" id="nev" placeholder="nev" name="nev" required>
           </div>
 
           <div class="mb-3 mt-3">
             <label for="kor">kor:</label>
-            <input type="text" class="form-control" id="kor" placeholder="kor" name="kor">
+            <input type="text" class="form-control" id="kor" placeholder="kor" name="kor" required>
           </div>
 
           <div class="mb-3 mt-3">
             <label for="fajta">fajta:</label>
-            <input type="text" class="form-control" id="fajta" placeholder="fajta" name="fajta">
+            <input type="text" class="form-control" id="fajta" placeholder="fajta" name="fajta" required>
           </div>
 
           <button type="submit" class="btn btn-primary submit">Beküldt</button>

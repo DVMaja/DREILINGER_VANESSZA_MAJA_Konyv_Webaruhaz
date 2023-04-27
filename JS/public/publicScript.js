@@ -24,9 +24,10 @@ function divekOsszerak(lista) {
     text += `<div class="card  col-md-3">`;
     for (const key in object) {
       const element = object[key];
-      if (key == "nev") {
+      if (key == "cim") {
         text += `<div class="card-header text-bg-success"><h2><span id="S${key}"> ${element} </span></h2></div>`;
-      } else {
+      }
+       else {
         text += `<div class="card-body"><p><span id="S${key}"> ${element} </span></p></div>`;
       }
     }

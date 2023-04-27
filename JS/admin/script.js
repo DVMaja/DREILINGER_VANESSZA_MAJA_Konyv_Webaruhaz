@@ -40,7 +40,7 @@ function kezdoFuggveny() {
     let ujElemEloH = $(".ujElemLetrehoz");
     ujElemEloH.toggleClass("elrejt");
 
-    let submitGomb = $(".button");
+    let submitGomb = $(".ujGomb");
     let aktForm = $(".ujArray");
 
     let urlap = $(".ujArray");
@@ -59,10 +59,10 @@ function kezdoFuggveny() {
       //console.log(OBJEKTUMLISTA);     
       kezdoFuggveny();
     })
-
-
   })
 
+
+  let keresesGomb = $(".keresGomb");
 
   /*let szerkElem = $(".szerkeszt");
   szerkElem.on("click", function () {
@@ -94,8 +94,12 @@ function tablazatLetrehozas(lista) {
 
     for (const key in object) {
       const element = object[key];
-      tablazat += `<td ><span id="S${key}"> ${element} </span></td>`;
+      if (key == "kep") {        
+        tablazat += `<td><span><img src="${element}" alt="könyv" id="${key}"></span></td>`;        
+      }else{
+      tablazat += `<td ><span id="${key}"> ${element} </span></td>`;
     }
+    }    
     tablazat += `<td><button id="${index}" class="torles btn btn-danger" type="button">Törlés</button></td> 
       <td><button id="${index}" class="szerkeszt btn btn-success" type="button">Szerkesztés</button></td></tr>`;
   }

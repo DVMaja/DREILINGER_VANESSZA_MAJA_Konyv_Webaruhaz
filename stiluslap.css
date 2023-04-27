@@ -15,3 +15,7 @@ th {
 .elrejt {
   display: none;
 }
+img {
+  max-width: 100%;
+  width: 150px;
+}

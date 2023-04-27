@@ -6,6 +6,7 @@ export function validalas() {
 
     urlap.submit(function(){
         event.preventDefault();
+        
 
     })
 }
