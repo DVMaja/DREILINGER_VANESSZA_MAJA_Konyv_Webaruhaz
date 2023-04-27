@@ -19,6 +19,7 @@ function divekOsszerak(lista) {
   let text = `<div class="tarolo">`;
   text += `<div class="row">`;
 
+
   for (let index = 0; index < lista.length; index++) {
     const object = lista[index];
     text += `<div class="card  col-md-3">`;
@@ -39,8 +40,10 @@ function divekOsszerak(lista) {
 
     text += `</div>`;
   }
+
   text += "</div>";
   text += "</div>";
+
 
   return text;
 }
@@ -55,11 +58,15 @@ function kartyakModalja(lista) {
     const element = lista[megjelenitendo][key];
     //console.log(element);
 
-    if (key == "nev") {
+    if (key == "cim") {
       modal += `<div class="modal-header">
           <h4 class="modal-title"><span id="S${key}">${element}</span></h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>`;
-    } else {
+    } else if (key == "kep") {
+      modal += `<div class="modal-body">
+      <img src="${element}" alt="kép"></div>`;
+    }
+    else {
       modal += `<div class="modal-body">
           <p><span id="S${key}">${element}</span></p></div>`;
     }

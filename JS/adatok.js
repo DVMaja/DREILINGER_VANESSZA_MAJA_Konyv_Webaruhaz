@@ -12,7 +12,7 @@
 
 /**Késöbb befelyezni */
 export const OBJEKTUMLISTA  = [
-  { cim: "Skuldugery Pleasant", kep: "kepek/skulduggery_1.png", iro: "Derek Landy", mufaly: "fantasy", kiadasDatuma: 2007 },
+  { cim: "Skulduggery Pleasant", kep: "kepek/skulduggery_1.png", iro: "Derek Landy", mufaly: "fantasy", kiadasDatuma: 2007 },
   { cim: "Playing with Fire", kep: "kepek/skulduggery_2.png", iro: "Derek Landy", mufaly: "fantasy", kiadasDatuma: 2008 },
   { cim: "The Faceless Ones", kep: "kepek/skulduggery_3.png", iro: "Derek Landy", mufaly: "fantasy", kiadasDatuma: 2009 },
   { cim: "Dark Days", kep: "kepek/skulduggery_4.png", iro: "Derek Landy", mufaly: "fantasy", kiadasDatuma: 2010 },
