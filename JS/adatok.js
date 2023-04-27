@@ -31,4 +31,4 @@ export const OBJEKTUMLISTA  = [
 
 ];
 
-export let kulcsLista = { kep: "Borító", iro: "Író", mufaly: "Műfaly", cim: "Cím", kiadasDatuma: "Kiadás dátuma" };
+export let kulcsLista = { cim: "Cím", kep: "Borító", iro: "Író", mufaly: "Műfaly", kiadasDatuma: "Kiadás dátuma" };

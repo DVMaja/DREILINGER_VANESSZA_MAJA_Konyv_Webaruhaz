@@ -1,3 +1,6 @@
+/**OUT OF DATE
+ * ÍRd át őket!
+ */
 export function validalas() {
     const urlap = $(".ujElemLetrehoz");
     const  inev = $("#inev");
